@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Fixed: was #0000 (transparent) */
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevents horizontal scroll from large text */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+header {
+    position: fixed; /* Changed to fixed so it stays while scrolling */
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    z-index: 999;
+    background-color: rgba(75, 75, 75, 0.7); /* Added transparency for the blur effect */
+    backdrop-filter: blur(10px);
+}
+
+.head-left {
+    display: flex;
+    align-items: center;
+}
+
+.head-left img {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.head-left button {
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.head-left button:hover {
+    opacity: 0.7;
+}
+
+.head-right {
+    display: flex;
+    align-items: center; /* Ensures links align with logo height */
+}
+
+.head-right a {
+    text-decoration: none;
+    color: white;
+    padding-left: 25px;
+    font-size: 15px;
+}
+
+.hero-section {
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-vid {
+    width: 100%;
+    height: 100%;
+    position: absolute; /* Changed to absolute to sit behind content */
+    top: 0;
+    left: 0;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-info {
+    z-index: 2;
+    position: absolute;
+    top: 50%; /* Adjusted from 80% to 50% for better centering */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Crucial for actual centering */
+    text-align: center; /* Centers the text and button inside the div */
+    width: 100%;
+}
+
+.hero-info h1 {
+    font-size: clamp(40px, 10vw, 120px); /* Responsive font size */
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    margin: 0;
+    line-height: 1;
+}
+
+.hero-info p {
+    color: white;
+    max-width: 400px; /* Increased slightly for readability */
+    margin: 20px auto; /* Centers the paragraph */
+}
+
+.hero-info button {
+    background-color: #edff66;
+    border: 2px solid #edff66; /* Fixed typo: "soild" -> "solid" */
+    padding: 12px 40px;
+    border-radius: 25px;
+    cursor: pointer; /* Fixed: "black" -> "pointer" */
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.hero-info button:hover {
+    background-color: transparent;
+    color: white;
+    box-shadow: 0 0 15px #edff66;
+}
+.gaming-text{
+    font-size: 120px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+}
+.next-btn{
+    width: 200px;
+    height: 200px;
+    background-color: #edff66;
+    position: absolute;
+    left: 45%;
+    bottom:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+z-index: 100;
+opacity: 0;
+transition: 0.5s;
+}
+.next-btn:hover{
+   width: 200px;
+   height: 200px;
+   opacity: 1;
+   box-shadow: 0 0 15px rgba(255,255,255,0.616);
+}
