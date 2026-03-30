@@ -1,44 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaming website</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 </head>
+
 <body>
     <div class="container">
         <header>
-    <div class="head-left">
-        <img src="images/logo.png" alt="logo">
-        <button>Products</button>
-    </div> 
-
-    <div class="head-right">
-        <p><a href="#">NEXUS</a></p>
-        <p><a href="#">STORE</a></p>
-        <p><a href="#">SUPPORT</a></p>
-        <p><a href="#">ABOUT</a></p>
-        <p><a href="#">CONTACT</a></p>
-    </div>
-    </header>
-    </div>
-    <section class="hero-section"> 
-        <div class="hero-vid">
-            <video loop autoplay muted plays-inline class="hero-vid">
-            <sources src="videos/feature-1.mp4" type="video/mp4">
-                </video>
-                <div class="hero-info"> 
-                    <h1> REDFINE</h1>
-                    <P> Enter the meganame layer unleash the play economy</P>
-                    <button> Watch Trailer</button>
-                </div>
-                <h1 class="gaming-text">Gaming </h1>
-                <div class="next-btn"></div>
-
+            <div class="head-left">
+                <img src="images/logo.png" alt="logo">
+                <button>Products</button>
             </div>
 
-    </section>
-<script src="script.js"></script>
+            <div class="head-right">
+                <p><a href="#">NEXUS</a></p>
+                <p><a href="#">STORE</a></p>
+                <p><a href="#">SUPPORT</a></p>
+                <p><a href="#">ABOUT</a></p>
+                <p><a href="#">CONTACT</a></p>
+            </div>
+        </header>
+        <section class="hero-section autoblur">
+            <div class="hero-vid">
+                <video src="videos/feature-1.mp4" autoplay muted loop playsinline class="hero-video"></video>
+
+                <div class="hero-info">
+                    <h1>REDEFINE</h1>
+                    <p>Enter the metagame Layer Unleash the play economy</p>
+                    <button>Watch Trailer</button>
+                </div>
+
+                <h1 class="gamming-text">Gamming</h1>
+
+                <div class="next-btn">
+                    NEXT
+                </div>
+            </div>
+        </section>
+        <section id="about" class="about-section">
+            <p>Welcome to Gaming Hub</p>
+            <div class="autoblur">
+            <h1>DISCOVER THE WORLD'S LARGEST GAMING COMMUNITY</h1>
+            </div>
+            <div class="image-box auto-take-full">
+                <img src="images/about.jpeg" alt="about-img">
+            </div>
+            <h2 class="hero-subtext">Game of Games begins—your life, now an epic MMORPG</h2>
+            <h3 class="hero-desc">Gaming Hub unites every player from countless games and platforms, both digital and
+                physical into a united Play Economy</h3>
+        </section>
+        <!--gallery-->
+        <section class="info-section">
+            <h3>Into the Metagame Layer</h3>
+            <p>Gaming Hub is a metagame layer that unites every player from countless games and platforms, both digital
+                and physical into a united Play Economy. Players can discover, connect, and compete with each other
+                across games, while brands can engage with their audiences in new and exciting ways.</p>
+            <div class="info-cards">
+                <div class="card">
+                    <h1>RADIANT</h1>
+                    <p>An anime and gaming-inspired NFT collection - the IP primed for expansion</p>
+                    <video src="videos/feature-5.mp4" autoplay muted loop playsinline class="hero-video"></video>
+                    <button>COMING SOON</button>
+                </div>
+                <div class="card">
+                    <h1>RADIANT</h1>
+                    <p>An anime and gaming-inspired NFT collection - the IP primed for expansion</p>
+                    <video src="videos/feature-4.mp4" autoplay muted loop playsinline class="hero-video"></video>
+                    <button>COMING SOON</button>
+                </div>
+                <div class="card">
+                    <h1>RADIANT</h1>
+                    <p>An anime and gaming-inspired NFT collection - the IP primed for expansion</p>
+                    <video src="videos/hero-1.mp4" autoplay muted loop playsinline class="hero-video"></video>
+                    <button>COMING SOON</button>
+                </div>
+                <div class="card">
+                    <h1>RADIANT</h1>
+                    <p>An anime and gaming-inspired NFT collection - the IP primed for expansion</p>
+                    <video src="videos/hero-2.mp4" autoplay muted loop playsinline class="hero-video"></video>
+                    <button>COMING SOON</button>
+                </div>
+                <div class="card">
+                    <h1>RADIANT</h1>
+                    <p>An anime and gaming-inspired NFT collection - the IP primed for expansion</p>
+                    <video src="videos/hero-4.mp4" autoplay muted loop playsinline class="hero-video"></video>
+                    <button>COMING SOON</button>
+                </div>
+                <div class="card one">
+                    <h1>MORE COMING SOON</h1>
+                    <img src="images/coming-soon.jfif" alt="coming soon" class="image">
+                </div>
+            </div>
+        </section>
+        <!--Contact-->
+        <section class="contact-section">
+            <p>Join Gaming Hub</p>
+            <div class="autoblur">
+            <h1>LET'S BUILD THE NEW ERA OF GAMMING TOGETHER</h1>
+            </div>
+            <button>CONTACT US</button>
+            <img class="img1" src="images/swordman.jpeg" alt="contact-image">
+            <img class="img2" src="images/contact-1.jpeg" alt="contact-image">
+            <img class="img3" src="images/contact-2.jpeg" alt="contact-image">
+        </section>
+        <footer class="footer">
+            <p>&copy; 2026 Gaming Hub. All rights reserved.</p>
+            <ul>
+                <li><a href="#"><i class="bx bxl-youtube"></i></a></li>
+                <li><a href="#"><i class="bx bxl-twitter"></i></a></li>
+                <li><a href="#"><i class="bx bxl-instagram"></i></a></li>
+                <li><a href="#"><i class="bx bxl-github"></i></a></li>
+                <li><a href="#"><i class="bx bxl-linkedin"></i></a></li>
+            </ul>
+            <p>Privacy Policy</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
