@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming FAQ | 10 Intelligence Intel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+    :root {
+    --bg: #050505;
+    --card: #0f0f15;
+    --purple: #7c3aed;
+    --text-gray: #a1a1aa;
+}
+
+body {
+    background-color: var(--bg);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+
+.gaming-banner-space {
+    height: 35vh;
+    background: linear-gradient(to bottom, transparent, var(--bg)), 
+                url('game.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.faq-section {
+    max-width: 800px;
+    margin: -80px auto 50px;
+    padding: 0 15px;
+}
+
+.faq-header h1 {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.purple-neon {
+    color: var(--purple);
+    text-shadow: 0 0 15px var(--purple);
+}
+
+
+.search-box {
+    position: relative;
+    max-width: 100%;
+    margin: 25px auto;
+}
+
+.search-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--purple);
+}
+
+#faqSearch {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 12px;
+    color: white;
+    outline: none;
+    box-sizing: border-box;
+}
+
+#faqSearch:focus { border-color: var(--purple); }
+
+
+.faq-grid { display: flex; flex-direction: column; gap: 12px; }
+
+.faq-card {
+    background: var(--card);
+    border: 1px solid #222;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.faq-trigger {
+    padding: 18px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.faq-trigger:hover { background: rgba(124, 58, 237, 0.05); }
+
+.faq-content {
+    padding: 0 20px 20px;
+    color: var(--text-gray);
+    display: none;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+
+.faq-card.active { border-color: var(--purple); box-shadow: 0 0 15px rgba(124, 58, 237, 0.1); }
+.faq-card.active .faq-trigger i { transform: rotate(45deg); color: var(--purple); }
+
+@media (max-width: 480px) {
+    .faq-trigger { font-size: 0.9rem; padding: 15px; }
+    .faq-header h1 { margin-bottom: 10px; }
+}
+</style>
+<body>
+
+    <div class="gaming-banner-space"></div>
+
+    <section class="faq-section">
+        <div class="faq-header">
+            <h1>Support <span class="purple-neon">Database</span></h1>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="faqSearch" placeholder="Search for keywords (e.g. 'Lag', 'Account', 'FPS')...">
+            </div>
+        </div>
+
+        <div class="faq-grid">
+            <div class="faq-card">
+                <div class="faq-trigger"><span>How do I enable 120FPS mode?</span> <i class="fas fa-plus"></i></div>
+                <div class="faq-content"><p>Go to Settings > Video. Toggle 'Performance Mode' to ON. Requires HDMI 2.1 and a 120Hz+ monitor.</p></div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-trigger"><span>I lost my 2FA recovery codes!</span> <i class="fas fa-plus"></i></div>
+                <div class="faq-content"><p>Contact support with proof of purchase and your registered ID to reset your security credentials manually.</p></div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-trigger"><span>What is the 'Purple Pass' tier?</span> <i class="fas fa-plus"></i></div>
+                <div class="faq-content"><p>The Purple Pass grants 20% extra XP, monthly exclusive skins, and priority server queuing.</p></div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-trigger"><span>How to report a toxic player?</span> <i class="fas fa-plus"></i></div>
+                <div class="faq-content"><p>Open the Social Tab (O), click the player's name, and select 'Report'. We review all reports within 24 hours.</p></div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-trigger"><span>Minimum specs for Ray Tracing?</span> <i class="fas fa-plus"></i></div>
+                <div class="faq-content"><p>Recommended: NVIDIA RTX 30-series or AMD RX 6000-series, 16GB RAM, and an SSD.</p></div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-trigger"><span>Can I play across different platforms?</span> <i class="fas fa-plus"></i></div>
+                <div class="faq-content"><p>Yes! Full cross-play is supported between PC, PS5, and Xbox Series X. Progress is saved to your Purple ID.</p></div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-trigger"><span>How do I join the Pro League?</span> <i class="fas fa-plus"></i></div>
+                <div class="faq-content"><p>Reach 'Diamond' rank in Ranked Season and register through the 'Competitions' tab on our website.</p></div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-trigger"><span>Servers are lagging, what do I do?</span> <i class="fas fa-plus"></i></div>
+                <div class="faq-content"><p>Check your region settings in the main menu. Select the server with the lowest 'ms' ping for your location.</p></div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-trigger"><span>How to refund an accidental skin purchase?</span> <i class="fas fa-plus"></i></div>
+                <div class="faq-content"><p>Items can be refunded within 48 hours IF they have not been equipped or used in a match.</p></div>
+            </div>
+            <div class="faq-card">
+                <div class="faq-trigger"><span>Is there a mobile version coming?</span> <i class="fas fa-plus"></i></div>
+                <div class="faq-content"><p>Beta testing for iOS and Android begins in Q4 2026. Stay tuned to our socials for invite codes!</p></div>
+            </div>
+        </div>
+
+        <div id="noResults" style="display:none; text-align:center; color:#7c3aed; padding:20px;">
+            <i class="fas fa-ghost"></i> No data found in the database.
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function() {
+    
+    $('.faq-trigger').on('click', function() {
+        const parent = $(this).parent('.faq-card');
+        
+        if (parent.hasClass('active')) {
+            parent.removeClass('active');
+            $(this).next('.faq-content').slideUp();
+        } else {
+            $('.faq-card').removeClass('active');
+            $('.faq-content').slideUp();
+            parent.addClass('active');
+            $(this).next('.faq-content').slideDown();
+        }
+    });
+
+
+    $('#faqSearch').on('keyup', function() {
+        const val = $(this).val().toLowerCase();
+        let found = false;
+
+        $('.faq-card').each(function() {
+            const text = $(this).text().toLowerCase();
+            if (text.indexOf(val) > -1) {
+                $(this).show();
+                found = true;
+            } else {
+                $(this).hide();
+            }
+        });
+
+        found ? $('#noResults').hide() : $('#noResults').show();
+    });
+});
+    </script>
+
+  
+</body>
+</html>
