@@ -117,9 +117,7 @@ body {
 }
 </style>
 <body>
-
     <div class="gaming-banner-space"></div>
-
     <section class="faq-section">
         <div class="faq-header">
             <h1>Support <span class="purple-neon">Database</span></h1>
@@ -128,7 +126,6 @@ body {
                 <input type="text" id="faqSearch" placeholder="Search for keywords (e.g. 'Lag', 'Account', 'FPS')...">
             </div>
         </div>
-
         <div class="faq-grid">
             <div class="faq-card">
                 <div class="faq-trigger"><span>How do I enable 120FPS mode?</span> <i class="fas fa-plus"></i></div>
@@ -171,15 +168,12 @@ body {
                 <div class="faq-content"><p>Beta testing for iOS and Android begins in Q4 2026. Stay tuned to our socials for invite codes!</p></div>
             </div>
         </div>
-
         <div id="noResults" style="display:none; text-align:center; color:#7c3aed; padding:20px;">
             <i class="fas fa-ghost"></i> No data found in the database.
         </div>
     </section>
-
     <script>
         $(document).ready(function() {
-    
     $('.faq-trigger').on('click', function() {
         const parent = $(this).parent('.faq-card');
         
@@ -193,8 +187,6 @@ body {
             $(this).next('.faq-content').slideDown();
         }
     });
-
-
     $('#faqSearch').on('keyup', function() {
         const val = $(this).val().toLowerCase();
         let found = false;
@@ -213,7 +205,5 @@ body {
     });
 });
     </script>
-
-  
 </body>
 </html>
