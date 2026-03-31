@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -21,14 +22,14 @@
             </div>
 
             <div class="head-right">
-                <p><a href="#">NEXUS</a></p>
-                <p><a href="#">STORE</a></p>
-                <p><a href="#">SUPPORT</a></p>
-                <p><a href="#">ABOUT</a></p>
-                <p><a href="#">CONTACT</a></p>
+                <p><a href="#hero">HOME</a></p>
+                <p><a href="#about">ABOUT</a></p>
+                <p><a href="#gallery">STORE</a></p>
+                <p><a href="FAQS.html">FAQS</a></p>
+                <p><a href="#contact">CONTACT</a></p>
             </div>
         </header>
-        <section class="hero-section autoblur">
+        <section id="hero" class="hero-section autoblur">
             <div class="hero-vid">
                 <video src="videos/feature-1.mp4" autoplay muted loop playsinline class="hero-video"></video>
 
@@ -48,7 +49,7 @@
         <section id="about" class="about-section">
             <p>Welcome to Gaming Hub</p>
             <div class="autoblur">
-            <h1>DISCOVER THE WORLD'S LARGEST GAMING COMMUNITY</h1>
+                <h1>DISCOVER THE WORLD'S LARGEST GAMING COMMUNITY</h1>
             </div>
             <div class="image-box auto-take-full">
                 <img src="images/about.jpeg" alt="about-img">
@@ -57,54 +58,31 @@
             <h3 class="hero-desc">Gaming Hub unites every player from countless games and platforms, both digital and
                 physical into a united Play Economy</h3>
         </section>
-        <!--gallery-->
-        <section class="info-section">
-            <h3>Into the Metagame Layer</h3>
-            <p>Gaming Hub is a metagame layer that unites every player from countless games and platforms, both digital
-                and physical into a united Play Economy. Players can discover, connect, and compete with each other
-                across games, while brands can engage with their audiences in new and exciting ways.</p>
-            <div class="info-cards">
-                <div class="card">
-                    <h1>RADIANT</h1>
-                    <p>An anime and gaming-inspired NFT collection - the IP primed for expansion</p>
-                    <video src="videos/feature-5.mp4" autoplay muted loop playsinline class="hero-video"></video>
-                    <button>COMING SOON</button>
-                </div>
-                <div class="card">
-                    <h1>RADIANT</h1>
-                    <p>An anime and gaming-inspired NFT collection - the IP primed for expansion</p>
-                    <video src="videos/feature-4.mp4" autoplay muted loop playsinline class="hero-video"></video>
-                    <button>COMING SOON</button>
-                </div>
-                <div class="card">
-                    <h1>RADIANT</h1>
-                    <p>An anime and gaming-inspired NFT collection - the IP primed for expansion</p>
-                    <video src="videos/hero-1.mp4" autoplay muted loop playsinline class="hero-video"></video>
-                    <button>COMING SOON</button>
-                </div>
-                <div class="card">
-                    <h1>RADIANT</h1>
-                    <p>An anime and gaming-inspired NFT collection - the IP primed for expansion</p>
-                    <video src="videos/hero-2.mp4" autoplay muted loop playsinline class="hero-video"></video>
-                    <button>COMING SOON</button>
-                </div>
-                <div class="card">
-                    <h1>RADIANT</h1>
-                    <p>An anime and gaming-inspired NFT collection - the IP primed for expansion</p>
-                    <video src="videos/hero-4.mp4" autoplay muted loop playsinline class="hero-video"></video>
-                    <button>COMING SOON</button>
-                </div>
-                <div class="card one">
-                    <h1>MORE COMING SOON</h1>
-                    <img src="images/coming-soon.jfif" alt="coming soon" class="image">
+        <section id="gallery">
+            <div class="gallery-wrapper">
+                <h1>Into the Metagame Layer</h1>
+                <p>Gaming Hub is a metagame layer that unites every player from countless games and platforms, both
+                    digital
+                    and physical into a united Play Economy. Players can discover, connect, and compete with each other
+                    across games, while brands can engage with their audiences in new and exciting ways.</p>
+                <div class="grid">
+                    <div class="item"><img src="images/image 1.jfif" alt="Game 1"></div>
+                    <div class="item"><img src="images/image 2.jfif" alt="Game 2"></div>
+                    <div class="item"><img src="images/image 3.jfif" alt="Game 3"></div>
+                    <div class="item"><img src="images/gallery-4.jpeg" alt="Game 4"></div>
+                    <div class="item"><img src="images/image 5.jfif" alt="Game 5"></div>
+                    <div class="item"><img src="images/image 6.jfif" alt="Game 6"></div>
                 </div>
             </div>
+            <div class="overlay">
+                <span class="close">&times;</span>
+                <img class="overlay-img" src="" alt="Full View">
+            </div>
         </section>
-        <!--Contact-->
-        <section class="contact-section">
+        <section id="contact" class="contact-section">
             <p>Join Gaming Hub</p>
             <div class="autoblur">
-            <h1>LET'S BUILD THE NEW ERA OF GAMMING TOGETHER</h1>
+                <h1>LET'S BUILD THE NEW ERA OF GAMMING TOGETHER</h1>
             </div>
             <button>CONTACT US</button>
             <img class="img1" src="images/swordman.jpeg" alt="contact-image">

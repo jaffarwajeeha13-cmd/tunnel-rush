@@ -10,3 +10,21 @@ nextbutton.addEventListener("click", function(){
         index=-1;
     }
 });
+
+$(document).ready(function() {
+    $('.item').click(function() {
+        const imgSrc = $(this).find('img').attr('src');
+        $('.overlay-img').attr('src', imgSrc);
+        $('.overlay').css('display', 'flex').hide().fadeIn(400);
+    });
+    
+    $('.close').click(function() {
+        $('.overlay').fadeOut(300);
+    });
+    
+    $('.overlay').click(function(e) {
+        if (!$(e.target).is('.overlay-img')) {
+            $(this).fadeOut(300);
+        }
+    });
+});

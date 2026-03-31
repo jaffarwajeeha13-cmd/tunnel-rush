@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamerVerse | Home</title>
+ <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0b0b0d; color: #fff; font-family: 'Segoe UI', sans-serif; }
+
+/* SLIDER STYLES */
+.slider-container { position: relative; width: 100%; height: 80vh; overflow: hidden; }
+.slide { 
+    position: absolute; inset: 0; background-size: cover; background-position: center; 
+    display: none; align-items: center; justify-content: flex-start;
+}
+.slide.active { display: flex; }
+.slide-content { padding-left: 10%; animation: fadeIn 0.8s; }
+.slide-content h1 { font-size: 4rem; color: #00f2ff; text-shadow: 0 0 15px #00f2ff; }
+.game-btn { 
+    margin-top: 20px; padding: 12px 35px; background: #9d00ff; border: none; 
+    color: #fff; font-weight: bold; cursor: pointer; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+.slider-nav span { 
+    position: absolute; top: 50%; transform: translateY(-50%); 
+    font-size: 3rem; cursor: pointer; z-index: 10; padding: 20px; color: rgba(255,255,255,0.5);
+}
+#next { right: 0; }
+#prev { left: 0; }
+
+/* GALLERY STYLES */
+.container { padding: 50px 10%; }
+.section-title { text-align: center; margin-bottom: 40px; letter-spacing: 5px; color: #9d00ff; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.gallery-item { border: 2px solid #222; overflow: hidden; cursor: pointer; transition: 0.3s; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.gallery-item:hover { border-color: #00f2ff; box-shadow: 0 0 15px #00f2ff; }
+.gallery-item:hover img { transform: scale(1.1); }
+
+/* LIGHTBOX */
+.lightbox { 
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); 
+    z-index: 100; justify-content: center; align-items: center; 
+}
+.lightbox-img { max-width: 80%; border: 3px solid #9d00ff; }
+.close-lightbox { position: absolute; top: 20px; right: 40px; font-size: 50px; cursor: pointer; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+ </style>
+</head>
+<body>
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide active" style="background-image: url('https://picsum.photos/1200/600?random=11')">
+                <div class="slide-content">
+                    <h1>NEON PROTOCOL</h1>
+                    <p>The ultimate cyberpunk RPG experience is here.</p>
+                    <button class="game-btn">PLAY NOW</button>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://picsum.photos/1200/600?random=12')">
+                <div class="slide-content">
+                    <h1>VOID RUNNER</h1>
+                    <p>Master the shadows in this high-speed platformer.</p>
+                    <button class="game-btn">EXPLORE</button>
+                </div>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <span id="prev">&#10094;</span>
+            <span id="next">&#10095;</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">TOP FRANCHISES</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://picsum.photos/400/300?random=1" alt="Game 1"></div>
+            <div class="gallery-item"><img src="https://picsum.photos/400/300?random=2" alt="Game 2"></div>
+            <div class="gallery-item"><img src="https://picsum.photos/400/300?random=3" alt="Game 3"></div>
+            <div class="gallery-item"><img src="https://picsum.photos/400/300?random=4" alt="Game 4"></div>
+            <div class="gallery-item"><img src="https://picsum.photos/400/300?random=5" alt="Game 5"></div>
+            <div class="gallery-item"><img src="https://picsum.photos/400/300?random=6" alt="Game 6"></div>
+        </div>
+    </div>
+
+    <div class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-img" src="">
+    </div>
+
+    <script>
+$(document).ready(function() {
+
+    // --- SLIDER LOGIC ---
+    let slides = $('.slide');
+    let currentSlide = 0;
+
+    function moveSlide(n) {
+        slides.eq(currentSlide).fadeOut(400).removeClass('active');
+        currentSlide = (n + slides.length) % slides.length;
+        slides.eq(currentSlide).fadeIn(400).addClass('active');
+    }
+
+    $('#next').click(function() { moveSlide(currentSlide + 1); resetTimer(); });
+    $('#prev').click(function() { moveSlide(currentSlide - 1); resetTimer(); });
+
+    let autoPlay = setInterval(() => { $('#next').click(); }, 5000);
+    function resetTimer() { clearInterval(autoPlay); autoPlay = setInterval(() => { $('#next').click(); }, 5000); }
+
+
+    // --- GALLERY LIGHTBOX LOGIC ---
+    $('.gallery-item').click(function() {
+        let fullSrc = $(this).find('img').attr('src');
+        $('.lightbox-img').attr('src', fullSrc);
+        $('.lightbox').css('display', 'flex').hide().fadeIn(300);
+    });
+
+    $('.close-lightbox, .lightbox').click(function(e) {
+        if (!$(e.target).is('.lightbox-img')) {
+            $('.lightbox').fadeOut(300);
+        }
+    });
+
+});
+    </script>
+</body>
+</html>
