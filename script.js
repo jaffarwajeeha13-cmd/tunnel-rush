@@ -28,3 +28,21 @@ $(document).ready(function() {
         }
     });
 });
+
+$(document).ready(function(){
+            $('.slider').slick({
+                autoplay: true,
+                autoplaySpeed: 1500,
+                dots: true,
+                arrows: true,
+                infinite: true,
+                speed: 800,
+                fade: false,
+                cssEase: 'ease-in-out'
+            });
+});
+
+const button = document.getElementById('contact-us');
+button.addEventListener('click', function() {
+    window.location.href = 'contact.html';
+});
