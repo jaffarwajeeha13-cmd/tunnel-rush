@@ -243,7 +243,6 @@ header {
 }
 .gallery-wrapper h1 {
     margin-bottom: 0;
-    text-align: center;
 
 }
 .gallery-wrapper p{
@@ -269,6 +268,39 @@ header {
     border: 1px solid grey;
     border-radius: 20px;
     transition: 0.5s;
+}
+.item h1{
+    position: absolute;
+    margin: 0;
+    top: 10px;
+    left: 5%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+    z-index: 1;
+    background: linear-gradient(to right, #4acfee, #53f8c9, #02d79a, #6070fd, #2a46ff, #0099ff, #4acfee);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+    max-width: 250px;
+}
+.item button{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    padding: 10px 25px;
+    border: 1px solid grey;
+    background-color: #0f1217;
+    color: grey;
+    border-radius: 20px;
+    box-shadow: 0 0 5px lightgrey;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.item button:hover{
+    box-shadow: 0 0 15px lightgrey;
+    opacity: 0.7;
 }
 .item img {
     width: 100%;
