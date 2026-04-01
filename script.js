@@ -50,3 +50,38 @@ const button = document.getElementById('contact-us');
 button.addEventListener('click', function() {
     window.location.href = 'contact.html';
 });
+
+
+
+
+ $(document).ready(function() {
+    $('.faq-trigger').on('click', function() {
+        const parent = $(this).parent('.faq-card');
+        
+        if (parent.hasClass('active')) {
+            parent.removeClass('active');
+            $(this).next('.faq-content').slideUp();
+        } else {
+            $('.faq-card').removeClass('active');
+            $('.faq-content').slideUp();
+            parent.addClass('active');
+            $(this).next('.faq-content').slideDown();
+        }
+    });
+    $('#faqSearch').on('keyup', function() {
+        const val = $(this).val().toLowerCase();
+        let found = false;
+
+        $('.faq-card').each(function() {
+            const text = $(this).text().toLowerCase();
+            if (text.indexOf(val) > -1) {
+                $(this).show();
+                found = true;
+            } else {
+                $(this).hide();
+            }
+        });
+
+        found ? $('#noResults').hide() : $('#noResults').show();
+    });
+});
