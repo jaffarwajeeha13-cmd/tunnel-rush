@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaming Portfolio | Contact</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2  /jquery.min.js"></script> 
-  <script type="text/javascript" src=" http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
+    <script src="cdn/jquery-3.6.0.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
     <style>
         * {
             margin: 0;
@@ -101,8 +102,9 @@
             border: 1px solid rgba(109, 40, 217, 0.3);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
-        .input-box { margin-bottom: 25px; }
+        .input-box { margin-bottom: 25px; position: relative; }
         .input-box label { display: block; margin-bottom: 10px; color: #94a3b8; font-size: 0.9rem; }
+        
         input, textarea {
             width: 100%;
             padding: 15px;
@@ -113,6 +115,17 @@
             font-size: 1rem;
             transition: all 0.3s ease;
         }
+        input.error, textarea.error {
+            border-color: #ef4444 !important;
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+        }
+        label.error {
+            color: #ef4444 !important;
+            font-size: 0.8rem !important;
+            margin-top: 5px;
+            font-weight: 400;
+        }
+
         #submitBtn {
             width: 100%;
             padding: 16px;
@@ -131,39 +144,17 @@
             box-shadow: 0 0 25px rgba(109, 40, 217, 0.8);
             transform: translateY(-3px);
         }
-
-   
         
-        @media (max-width: 992px) {
-            .contact-area {
-                margin-top: -50px; 
-            }
-        }
-
+        @media (max-width: 992px) { .contact-area { margin-top: -50px; } }
         @media (max-width: 768px) {
-            .gaming-bg-header {
-                height: 200px; 
-            }
-            .contact-area {
-                margin-top: -30px;
-            }
-            .glass-form-container {
-                padding: 25px;
-            }
-            .flex-container {
-                flex-direction: column;
-            }
+            .gaming-bg-header { height: 200px; }
+            .contact-area { margin-top: -30px; }
+            .glass-form-container { padding: 25px; }
+            .flex-container { flex-direction: column; }
         }
-
         @media (max-width: 480px) {
-            .detail-item {
-                flex-direction: column; 
-                align-items: flex-start;
-                gap: 10px;
-            }
-            .gaming-status {
-                padding: 15px;
-            }
+            .detail-item { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .gaming-status { padding: 15px; }
         }
     </style>
 </head>
@@ -201,16 +192,16 @@
             <div class="glass-form-container">
                 <form id="contactForm">
                     <div class="input-box">
-                        <label>Full Name</label>
-                        <input type="text" name="name" placeholder="Enter your name">
+                        <label for="name">Full Name</label>
+                        <input type="text" name="name" id="name" placeholder="Enter your name">
                     </div>
                     <div class="input-box">
-                        <label>Email Address</label>
-                        <input type="email" name="email" placeholder="example@gmail.com">
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" placeholder="example@gmail.com">
                     </div>
                     <div class="input-box">
-                        <label>Your Message</label>
-                        <textarea name="message" rows="4" placeholder="Type your message..."></textarea>
+                        <label for="message">Your Message</label>
+                        <textarea name="message" id="message" rows="4" placeholder="Type your message..."></textarea>
                     </div>
                     <button type="submit" id="submitBtn">
                         SEND MESSAGE <i class="fas fa-bolt"></i>
@@ -222,8 +213,54 @@
 
     <script>
         $(document).ready(function() {
+            // Initial animation
             $('.contact-area').hide().fadeIn(1500);
             
+            // JQuery Validation Setup
+            $("#contactForm").validate({
+                rules: {
+                    name: {
+                        required: true,
+                        minlength: 3
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    message: {
+                        required: true,
+                        minlength: 10
+                    }
+                },
+                messages: {
+                    name: {
+                        required: "Please enter your tag (name)",
+                        minlength: "Name must be at least 3 characters"
+                    },
+                    email: {
+                        required: "Email is required to connect",
+                        email: "Please enter a valid email address"
+                    },
+                    message: {
+                        required: "The message box is empty!",
+                        minlength: "Your message is too short for the quest"
+                    }
+                },
+                // This replaces your manual form submit logic
+                submitHandler: function(form) {
+                    const name = $('input[name="name"]').val();
+                    $('#submitBtn').prop('disabled', true).html('SENDING... <i class="fas fa-spinner fa-spin"></i>');
+                    
+                    // Simulate API Call
+                    setTimeout(function() {
+                        alert("GG, " + name + "! Your message was sent successfully.");
+                        $('#submitBtn').prop('disabled', false).html('SEND MESSAGE <i class="fas fa-bolt"></i>');
+                        form.reset(); 
+                    }, 1500);
+                }
+            });
+
+            // Focus/Blur effects (retained from your original code)
             $('input, textarea').on('focus', function() {
                 $(this).css({
                     'border-color': '#6d28d9',
@@ -239,38 +276,7 @@
                     'transform': 'scale(1)'
                 });
             });
-
-            $('#contactForm').on('submit', function(e) {
-                e.preventDefault();
-                const name = $('input[name="name"]').val();
-                $('#submitBtn').html('SENDING... <i class="fas fa-spinner fa-spin"></i>');
-                
-                setTimeout(function() {
-                    alert("GG, " + name + "! Your message was sent successfully.");
-                    $('#submitBtn').html('SEND MESSAGE <i class="fas fa-bolt"></i>');
-                    $('#contactForm')[0].reset();
-                }, 1500);
-            });
         });
-
-
- 
-               $(function() {                           
-                             $('#contact-form').validate({
-                                 rules:{
-                                   name:{
-                                     required:true,
-                                     minlenght:3
-                                   },
-                                   email:{
-                                     required:true,
-                                     email:true
-                                   }                                                                    
-                                 }
-                                
-                             });
-                           });   
-
     </script>
 </body>
 </html>
