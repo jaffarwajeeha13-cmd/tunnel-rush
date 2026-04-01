@@ -5,120 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaming FAQ | 10 Intelligence Intel</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<style>
-    :root {
-    --bg: #050505;
-    --card: #0f0f15;
-    --purple: #7c3aed;
-    --text-gray: #a1a1aa;
-}
-
-body {
-    background-color: var(--bg);
-    color: white;
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-}
-
-
-.gaming-banner-space {
-    height: 35vh;
-    background: linear-gradient(to bottom, transparent, var(--bg)), 
-                url('images/backgroung-image-2.jfif');
-    background-size: cover;
-    background-position: center;
-}
-
-.faq-section {
-    max-width: 800px;
-    margin: -80px auto 50px;
-    padding: 0 15px;
-}
-
-.faq-header h1 {
-    font-size: clamp(1.8rem, 8vw, 3rem);
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.purple-neon {
-    color: var(--purple);
-    text-shadow: 0 0 15px var(--purple);
-}
-
-
-.search-box {
-    position: relative;
-    max-width: 100%;
-    margin: 25px auto;
-}
-
-.search-box i {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--purple);
-}
-
-#faqSearch {
-    width: 100%;
-    padding: 15px 15px 15px 45px;
-    background: #111;
-    border: 1px solid #333;
-    border-radius: 12px;
-    color: white;
-    outline: none;
-    box-sizing: border-box;
-}
-
-#faqSearch:focus { border-color: var(--purple); }
-
-
-.faq-grid { display: flex; flex-direction: column; gap: 12px; }
-
-.faq-card {
-    background: var(--card);
-    border: 1px solid #222;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.faq-trigger {
-    padding: 18px 20px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-    font-size: 1rem;
-}
-
-.faq-trigger:hover { background: rgba(124, 58, 237, 0.05); }
-
-.faq-content {
-    padding: 0 20px 20px;
-    color: var(--text-gray);
-    display: none;
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-
-.faq-card.active { border-color: var(--purple); box-shadow: 0 0 15px rgba(124, 58, 237, 0.1); }
-.faq-card.active .faq-trigger i { transform: rotate(45deg); color: var(--purple); }
-
-@media (max-width: 480px) {
-    .faq-trigger { font-size: 0.9rem; padding: 15px; }
-    .faq-header h1 { margin-bottom: 10px; }
-}
-</style>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="cdn/all.min.css">
+    <script src="cdn/jquery-3.6.0.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 </head>
 <body>
+      <header>
+        <div class="head-left">
+            <img src="images/logo.png" alt="logo">
+            <button>Products</button>
+        </div>
+
+        <div class="head-right">
+            <p><a href="index.html">HOME</a></p>
+            <p><a href="index.html">ABOUT</a></p>
+            <p><a href="index.html">STORE</a></p>
+            <p><a href="FAQS.html">FAQS</a></p>
+            <p><a href="#">CONTACT</a></p>
+        </div>
+    </header>
+    <div id="faqs">
     <div class="gaming-banner-space"></div>
-    <section class="faq-section">
+    <main class="faq-section">
         <div class="faq-header">
             <h1>Support <span class="purple-neon">Database</span></h1>
             <div class="search-box">
@@ -171,7 +81,19 @@ body {
         <div id="noResults" style="display:none; text-align:center; color:#7c3aed; padding:20px;">
             <i class="fas fa-ghost"></i> No data found in the database.
         </div>
-    </section>
+    </main>
+    </div>
+    <footer class="footer">
+            <p>&copy; 2026 Gaming Hub. All rights reserved.</p>
+            <ul>
+                <li><a href="#"><i class="bx bxl-youtube"></i></a></li>
+                <li><a href="#"><i class="bx bxl-twitter"></i></a></li>
+                <li><a href="#"><i class="bx bxl-instagram"></i></a></li>
+                <li><a href="#"><i class="bx bxl-github"></i></a></li>
+                <li><a href="#"><i class="bx bxl-linkedin"></i></a></li>
+            </ul>
+            <p>Privacy Policy</p>
+        </footer>
     <script>
         $(document).ready(function() {
     $('.faq-trigger').on('click', function() {
