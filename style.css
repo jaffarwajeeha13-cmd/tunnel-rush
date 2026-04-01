@@ -484,110 +484,169 @@ header {
     
 }
 
+@media screen and (max-width: 1280px) {
+
+    .gallery-wrapper {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
 @media screen and (max-width: 650px) {
-    header{
+    header {
         padding: 0 10px;
     }
-    .head-left button{
+
+    .head-left button {
         display: none;
     }
-    .head-right a{
+
+    .head-right a {
         font-size: 12px;
         padding: 0 5px;
     }
-    .hero-info{
+
+    .hero-info {
         left: 5%;
     }
-    .hero-section h1{
+
+    .hero-section h1 {
         font-size: 90px;
     }
-    .hero-vid{
+
+    .hero-vid {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
-    .hero-vid video{
+
+    .hero-vid video {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
-    .next-btn{
+
+    .next-btn {
         left: 45%;
         top: 50%;
         opacity: 0;
         transition: all 0.4s ease-in-out;
     }
-    .next-btn:hover{
+
+    .next-btn:hover {
         left: 45%;
         top: 50%;
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
         box-shadow: 0 0 30px rgba(237, 255, 102, 0.8);
     }
-    .about-section{
+
+    .about-section {
         margin: 0;
     }
-    .about-section h1{
-        font-size: 50px;
+
+    .about-section h1 {
+        font-size: 40px;
     }
-    .about-section h2 .about-section h3{
+
+    .about-section h2 .about-section h3 {
         max-width: 350px;
         text-align: center;
     }
-    .contact-section .img1{
-        width: 150px;
-        height: 180px;
+
+       .contact-section .img1 {
+        width: 120px;
+        height: 100px;
         right: 0;
         top: 20px;
     }
-    .contact-section .img2{
-        top: 30px;
-        left: -40px;
-        width: 180px;
-        height: 180px;
+
+    .contact-section .img2 {
+             top: 30px;
+        left: -5px;
+        width: 120px;
+        height: 100px;
     }
-    .contact-section .img3{
-        left: -40px;
-        bottom: 0;
-        width: 150px;
-        height: 180px;
     }
-    .contact-section h1{
-        font-size: 60px;
+
+    .contact-section .img3 {
+  
+    left: -40px;
+    bottom: 0;
+    width: 120px;
+    height: 100px;
+}
+
+    .contact-section h1 {
+        font-size: 50px;
         max-width: 300px;
+    
     }
-    .footer p{
+
+    .footer p {
         display: none;
     }
-    .footer ul{
+
+    .footer ul {
         margin-left: 70px;
     }
-}
-   @media (max-width: 992px) {
-            .game-slider {
-                width: 95%;
-            }
-        }
-        @media (max-width: 768px) {
-            .game-slider {
-                margin: 25px auto;
-            }
-            .slider img {
-                border-radius: 10px;
-            }
-        }
-        @media (max-width: 480px) {
-            .slider img {
-                height: 200px;
-            }
 
-            .slick-prev:before,
-            .slick-next:before {
-                font-size: 18px;
-            }
-        }
-        @media (min-width: 1400px) {
-            .game-slider {
-                max-width: 1300px;
-            }
-        }
+
+@media (max-width: 992px) {
+    .game-slider {
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .game-slider {
+        margin: 25px auto;
+    }
+
+    .slider img {
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .hero-video{
+        translate: -50% -70%;
+    }
+    body .slick-arrow {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 250px;
+        margin: auto;
+    }
+    body .slick-arrow.slick-prev {
+        left: -20px;
+    }
+    body .slick-arrow.slick-next {
+        right: -30px;
+    }
+    .grid {
+        grid-template-columns: auto;
+    }
+
+    .slider img {
+        height: 200px;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .game-slider {
+        max-width: 1300px;
+    }
+}
