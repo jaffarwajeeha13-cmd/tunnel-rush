@@ -1,3 +1,4 @@
+//loop video
 const nextbutton = document.querySelector(".next-btn");
 const video = document.querySelector(".hero-video");
 const movielist=["videos/feature-1.mp4", "videos/feature-3.mp4", "videos/feature-2.mp4", "videos/hero-3.mp4"]; 
@@ -11,6 +12,7 @@ nextbutton.addEventListener("click", function(){
     }
 });
 
+//gallery
 $(document).ready(function() {
     $('.item').click(function() {
         const imgSrc = $(this).find('img').attr('src');
@@ -29,6 +31,7 @@ $(document).ready(function() {
     });
 });
 
+//slider
 $(document).ready(function(){
             $('.slider').slick({
                 autoplay: true,
@@ -42,6 +45,7 @@ $(document).ready(function(){
             });
 });
 
+//contact us button that connect to contact form
 const button = document.getElementById('contact-us');
 button.addEventListener('click', function() {
     window.location.href = 'contact.html';
