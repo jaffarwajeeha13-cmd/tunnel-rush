@@ -945,3 +945,15 @@ label.error {
     .faq-trigger { font-size: 0.9rem; padding: 15px; }
     .faq-header h1 { margin-bottom: 10px; }
 }
+
+@media screen and (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        padding: 0 20px;
+    }
+    
+    .item {
+        margin-left: 0 !important; 
+        width: 100%;
+    }
+}
